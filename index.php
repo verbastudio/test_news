@@ -14,6 +14,13 @@ define('main_url', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] 
 define('id_session', session_id());
 require_once('autoload.php');
 
+$csss = glob(server_path . 'css/*.css');
+foreach ($csss as $css) {
+    if (file_exists($css)) {
+        $array_css[] = str_replace(server_path . '', '', $css);
+    }
+}
+
 if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] !== 'XMLHttpRequest') {
     require_once(server_path . 'views/head.php');
     if ($_GET['post']) {
@@ -32,7 +39,7 @@ if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH
             $request = [
                 'post_name' => $list['post_name'] . $tr,
                 'post_body' => $list['post_body'],
-                'status' => 1
+                'status'    => 1
             ];
             (new ControllerNews())->AddPost($request);
         }

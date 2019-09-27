@@ -5,7 +5,6 @@
  * Date: 25.09.19
  * Time: 20:46
  */
-
 //namespace NEWS;
 
 class DB

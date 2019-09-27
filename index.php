@@ -34,7 +34,7 @@ if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH
                 'post_body' => $list['post_body'],
                 'status' => 1
             ];
-            $sdfs = (new ControllerNews())->AddPost($request);
+            (new ControllerNews())->AddPost($request);
         }
     } elseif ($_GET['edit']) {
         $action = "Edit";

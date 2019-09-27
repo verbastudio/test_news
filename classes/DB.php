@@ -25,14 +25,11 @@ class DB
     {
         if (self::$instance === null) {
             $driver = 'mysql';
-            //$host = 'db3.ho.ua';
-          $host = 'localhost';
+            $host = 'localhost';
             $port = ''; //3306
             $dbname = 'test_news';
-			//$username = 'verbastudio';
-            $username = 'verba';
-			//$password = 'DKqdCDudfv';
-            $password = 'password';
+	    $username = 'verba';
+	    $password = 'password';
             $charset = 'utf8';
             $opt = array(
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

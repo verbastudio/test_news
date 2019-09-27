@@ -1,0 +1,12 @@
+RewriteEngine On
+DirectoryIndex index.php
+#AddDefaultCharset UTF-8
+Options +FollowSymlinks
+#Options +SymLinksIfOwnerMatch
+Options -Indexes
+
+RewriteRule ^page/([0-9]+)$ index.php?page=$1 [QSA,L]
+RewriteRule ^post/([0-9]+).html$ index.php?post=$1 [QSA,L]
+RewriteRule ^edit_([0-9]+).html$ index.php?edit=$1 [QSA,L]
+RewriteRule ^add.html$ index.php?add=true [QSA,L]
+RewriteRule ^addpost.html$ index.php?addpost=true [QSA,L]
